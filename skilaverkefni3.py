@@ -45,7 +45,7 @@ def q(n,s="",r = 0):
 lengd = int(input("Veldu lengd strengsins: "))
 q(lengd)
 print(y)
-'''
+
 #5
 y.reverse()
 
