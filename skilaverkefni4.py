@@ -1,8 +1,13 @@
 #Ágúst Örn Eiðsson
 #Reiknirit - Skilaverkefni 4
 
-#2
+
 '''
+1.
+
+'''
+
+#2
 listi=[8,5,3,7,1,9,2,6]
 
 def linear(l,t):
@@ -14,43 +19,57 @@ def linear(l,t):
             tel+=1
             if x==t:
                 return "Talan",t,"er í sæti",tel
-        return "Talan",t,"er ekki í listanum"
-
+        return "Talan",t,"er ekki í listanum" #get bara sett -1 en hitt lítur betur út
+'''
 t=int(input("Sláðu inn tölu til að finna: "))
-
 print(linear(listi,t))
 '''
 
 #3
-'''
-klara þetta seinna
-listi=[1,2,3,4,5,6,7,8,9]
-
-def binary(l,t,low,high):
-    if len(l)==0:
-        return -1
-    else:
-        p=len(l)//2
-        if t<p:
-            return "Bjælir"
-        elif t==p:
-            return binary(l)
+listi=[1,2,3,5,6,7,8,9]
+def b(t,lis,l,h):
+    if l<=h:
+        m=(h+l)//2
+        if t==lis[m]:
+            return "Talan",t,"er í sæti",m
+        elif t>lis[m]:
+            return b(t,lis,m+1,h)
         else:
-            return "Talan",t,"er í sæti",p
-
-
-t=int(input("Sláðu inn tölu til að finna: "))
-
-print(binary(listi,t,0,len(listi)))
+            return b(t,lis,0,m-1)
+    else:
+        return "Talan",t,"er ekki í listanum" #get bara sett -1 en hitt lítur betur út
 '''
+t=int(input("Sláðu inn tölu til að finna: "))
+print(b(t, listi, 0, len(listi)))
+'''
+'''
+4.
 
-#4
+a)
+
+b)
+'''
 
 #5
 listinn=[2,3,4,5,6,7,8,9,10]
-#def rada(l,t):
-
-
+#listinn=[]
+def rada(lis,t,l,h):
+    if len(lis)==0 or lis[-1]<t:
+        lis.append(t)
+        return True
+    elif t<lis[0]:
+        lis.insert(0,t)
+        return True
+    elif t == lis[l] or lis[l]<=t<=lis[l+1]:
+        lis.insert(l+1,t)
+        return True
+    elif t>lis[l]:
+        return rada(lis,t,l+1,h)
+'''
+t=int(input("Sláðu inn tölu til að bæta við: "))
+print(rada(listinn,t,0,len(listinn)))
+print(listinn)
+'''
 
 #6
 class node:
@@ -106,10 +125,13 @@ class tree:
 
 
 t=tree()
+'''
 print(t.insert(6))
 print(t.insert(2))
 print(t.insert(3))
 print(t.insert(7))
+
 print(t.find(3))
 print(t.find(4))
 print(t.find(6))
+'''
