@@ -4,7 +4,9 @@
 
 '''
 1.
-
+a) Fallið tekur inn lista af tölum og raðar þeim
+b) Þetta heitir counting sort
+c) Flækjustigið er O(n+k). N er fjöldi staka í listanum og k er bilið milli stæðsta og minnsta staksins  and k is the range of input
 '''
 
 #2
@@ -44,10 +46,8 @@ print(b(t, listi, 0, len(listi)))
 '''
 '''
 4.
-
-a)
-
-b)
+a) Það er ein for lykkja í fallinu sem gerir flækjustigið O(n)
+b) Í hvert skipti sem fallið keyrist er listinn minnkaður um helming þannig þá er flækjustigið O(log(n))
 '''
 
 #5
