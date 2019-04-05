@@ -52,6 +52,20 @@ class Node:
                 self.right = Node(d)
                 return True
 
+    def preOrderPrintN(self):
+        print(self.value)
+        if self.left:
+            self.left.preOrderPrint()
+        if self.right:
+            self.right.preOrderPrint()
+
+    def postOrderPrintN(self):
+        if self.left:
+            self.left.postOrderPrint()
+        if self.right:
+            self.right.postOrderPrint()
+        print(self.value)
+
 
 class Tree:
     def __init__(self):
@@ -64,19 +78,14 @@ class Tree:
             self.root = Node(d)
             return True
 
-    def preOrderPrint(self,d):
-        a=Node(d)
-        if a.left:
-            a.left.preOrderPrint()
-        if a.right:
-            a.right.preOrderPrint()
-        print( a.value,"asd")
+    def preOrderPrint(self):
+
+
 
     def postOrderPrint(self):
         1==1
-        # Þinn kóði hér. Endurkvæmt fall sem fer yfir í Node klasa
 
-    def delete(n):
+    def delete(self):
         1==1
         # Þinn kóði hér. Endurkvæmt fall sem fer yfir í Node klasa
 
@@ -85,11 +94,12 @@ class Tree:
         # Þinn kóði hér
 
 t = Tree()
-root = Node(27)
-root.insert(14)
-root.insert(35)
-root.insert(10)
-root.insert(19)
-root.insert(31)
-root.insert(42)
-t.preOrderPrint(root)
+t.insert(27)
+t.insert(7)
+t.insert(57)
+t.insert(62)
+t.insert(13)
+t.insert(56)
+t.insert(2)
+print(t.preOrderPrint())
+
